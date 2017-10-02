@@ -1,10 +1,24 @@
 // Select color input
 // Select size input
 
-// When size is submitted by the user, call makeGrid()
+let submit = $('form').children().last();
+submit.on('click', makeGrid(submit.	event));
 
-function makeGrid() {
+function makeGrid(event) {
+	event.preventDefault();
+	let rows, cols, color;
 
-// Your code goes here!
+	rows = $('#input_height').attr('value');
+	console.log('rows:' + rows);
+	cols = $('#input_width').attr('value');
+	console.log('cols:' + cols);
+// for each row
+	// for each col
+		//make cell
+
+}
+
+//Called when the user clicks on a cell in the grid. Causes the background color of that cell to change to the chosen color.
+function changeCellColor() {
 
 }
