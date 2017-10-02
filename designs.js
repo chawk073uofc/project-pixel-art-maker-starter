@@ -1,30 +1,23 @@
-// Select color input
-// Select size input
-
 let submit = $('form').children().last();
 submit.on('click', makeGrid);
 
 function makeGrid() {
-	$('body').append('<p>"Hello"</p>');
 	let rows, cols, currentRow, currentCell, color, canvas;
 
-	rows = $('#input_height').attr('value');
-	console.log('rows:' + rows);
-	cols = $('#input_width').attr('value');
-	console.log('cols:' + cols);
-
-	rows = 5;
-	cols = 5;
 	canvas = $('#pixel_canvas');
+	canvas.empty();
+	rows = document.getElementById('input_height').value;
+	cols = document.getElementById('input_width').value;
+
+	//Build the table cell by cell
 	for(let i = 0; i < rows; i++) {
 		currentRow = document.createElement('tr');
 		canvas.append(currentRow);
-		for(let j = 0; j < rows; j++) {
+		for(let j = 0; j < cols; j++) {
 			currentCell = document.createElement('td');
 			currentRow.append(currentCell);
 		}
 	}
-	console.log(canvas);
 	return false;
 }
 
