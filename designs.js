@@ -8,6 +8,7 @@ function makeGrid() {
 	canvas.empty();
 	rows = document.getElementById('input_height').value;
 	cols = document.getElementById('input_width').value;
+	canvas.on('click', 'td', changeCellColor);
 
 	//Build the table cell by cell
 	for(let i = 0; i < rows; i++) {
@@ -23,5 +24,7 @@ function makeGrid() {
 
 //Called when the user clicks on a cell in the grid. Causes the background color of that cell to change to the chosen color.
 function changeCellColor() {
-
+	event.preventDefault();
+	console.log("Changing cell color");
+	$(this).attr('bgcolor', 'brown');
 }
