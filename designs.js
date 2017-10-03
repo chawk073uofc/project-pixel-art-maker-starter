@@ -26,5 +26,5 @@ function makeGrid() {
 function changeCellColor() {
 	event.preventDefault();
 	console.log("Changing cell color");
-	$(this).attr('bgcolor', 'brown');
+	$(this).attr('bgcolor', document.getElementById('colorPicker').value);
 }
